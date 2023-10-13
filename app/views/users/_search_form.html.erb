@@ -1,23 +1,12 @@
 <%= form_with(model: user, url: "/search", method: "post", html: { data: { controller: "masks" } }) do |form| %>
-  <% if user.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-      <ul>
-        <% user.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <div class="row">
     <div class="col-6 card p-3 class">
+      <h2>Search a user</h2>
       <div class="row mb-2">
         <div class="col">
           <%= form.label :name, style: "display: block" %>
           <%= form.text_field :name, class: "form-control" %>
-          <%= errors_for(form, :name) %>
         </div>
       </div>
 
@@ -25,13 +14,11 @@
         <div class="col">
           <%= form.label :phone, style: "display: block" %>
           <%= form.text_field :phone, class: "form-control", data: { masks_target: 'phone' } %>
-          <%= errors_for(form, :phone) %>
         </div>
 
         <div class="col">
           <%= form.label :cpf, style: "display: block" %>
           <%= form.text_field :cpf, class: "form-control", data: { masks_target: 'cpf' } %>
-          <%= errors_for(form, :cpf) %>
         </div>
       </div>
 
@@ -39,12 +26,11 @@
         <div class="col">
           <%= form.label :email, style: "display: block" %>
           <%= form.text_field :email, class: "form-control" %>
-          <%= errors_for(form, :email) %>
         </div>
       </div>
 
       <div class="mt-3">
-        <%= form.submit 'Search', class: "btn btn-primary text-white" %>
+        <%= form.submit 'Search', class: "btn btn-primary text-white", style: "background-color: #eb5444;" %>
       </div>
     </div>
   </div>

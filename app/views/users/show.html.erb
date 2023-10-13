@@ -1,8 +1,18 @@
-<%= render @user %>
+<div class="row">
+  <div id="users"  class="col-6 card p-3 class">
+    <%= render @user %>
+    <div>
+      <button class="btn" style="background-color: #eb5444;"><%= link_to "Edit this user", edit_user_path(@user), style: "text-decoration:none; color: white" %></button>
+    </div>
+    <br>
+    <div>
+      <%= button_to "Destroy this user", @user, method: :delete, class: "btn btn-secondary" %>
+    </div>
+  </div>
+</div>
+
+<br>
 
 <div>
-  <%= link_to "Edit this user", edit_user_path(@user) %> |
-  <%= link_to "Back to users", users_path %>
-
-  <%= button_to "Destroy this user", @user, method: :delete %>
+  <button class="btn" style="background-color: #eb5444;"><%= link_to "Back to users", users_path, style: "text-decoration:none; color: white" %></button>
 </div>

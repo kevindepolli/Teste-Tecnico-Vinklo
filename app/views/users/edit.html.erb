@@ -5,6 +5,10 @@
 <br>
 
 <div>
-  <%= link_to "Show this user", @user %> |
-  <%= link_to "Back to users", users_path %>
+  <button class="btn" style="background-color: #480C5C;"><%= link_to "Show this user", @user, style: "text-decoration:none; color: white" %></button>
 </div>
+<br>
+<div>
+  <button class="btn" style="background-color: #eb5444;"><%= link_to "Back to users", users_path, style: "text-decoration:none; color: white" %></button>
+</div>
+
