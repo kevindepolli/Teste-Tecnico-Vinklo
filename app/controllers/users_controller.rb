@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   # GET /users or /users.json
   def index
     @users = User.all
+    @user = User.new
   end
 
   # GET /users/1 or /users/1.json
@@ -54,6 +55,26 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to users_url, notice: "User was successfully destroyed." }
       format.json { head :no_content }
+    end
+  end
+
+  def search
+    @user = User.where(name: params[:user][:name])
+                .or(User.where(email: params[:user][:email]))
+                .or(User.where(phone: params[:user][:phone]))
+                .or(User.where(cpf: params[:user][:cpf])).take
+
+
+    respond_to do |format|
+      if @user
+        format.html { redirect_to user_url(@user), notice: "User was successfully founded." }
+        format.json { render :show, status: :found, location: @user }
+      else
+        flash.alert = "User not found."
+        format.html { render index, status: :unprocessable_entity }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+
+      end
     end
   end
 

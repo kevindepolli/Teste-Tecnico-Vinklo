@@ -1,5 +1,9 @@
 <h1>Users</h1>
 
+<h2>Search a user</h2>
+
+<%= render "search_form", user: @user %>
+
 <div id="users">
   <% @users.each do |user| %>
     <%= render user %>
