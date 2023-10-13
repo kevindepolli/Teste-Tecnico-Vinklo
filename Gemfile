@@ -71,3 +71,5 @@ group :test do
 end
 
 gem "cpf_cnpj"
+
+gem 'pry', '~> 0.14.2'

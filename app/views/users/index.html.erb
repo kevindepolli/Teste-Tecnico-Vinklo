@@ -1,16 +1,24 @@
 <h1>Users</h1>
 
-<h2>Search a user</h2>
+<br>
 
 <%= render "search_form", user: @user %>
 
-<div id="users">
-  <% @users.each do |user| %>
-    <%= render user %>
-    <p>
-      <%= link_to "Show this user", user %>
-    </p>
-  <% end %>
+<br>
+
+<div class="row">
+    <div id="users"  class="col-6 card p-3 class">
+      <% @users.each do |user| %>
+        <%= render user %>
+        <div>
+          <button class="btn" style="background-color: #480C5C;"><%= link_to "Show this user", user, style: "text-decoration:none; color: white" %></button>
+        </div>
+      <% end %>
+    </div>
 </div>
 
-<%= link_to "New user", new_user_path %>
+<br>
+
+<button class="btn" style="background-color: #eb5444"><%= link_to "New user", new_user_path, style: "text-decoration:none; color: white" %></button>
+
+<br>

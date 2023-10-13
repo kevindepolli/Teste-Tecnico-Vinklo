@@ -71,9 +71,8 @@ class UsersController < ApplicationController
         format.json { render :show, status: :found, location: @user }
       else
         flash.alert = "User not found."
-        format.html { render index, status: :unprocessable_entity }
         format.json { render json: @user.errors, status: :unprocessable_entity }
-
+        format.html { render index, status: :unprocessable_entity }
       end
     end
   end
