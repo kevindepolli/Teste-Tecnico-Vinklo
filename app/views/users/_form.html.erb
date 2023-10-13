@@ -17,6 +17,7 @@
         <div class="col">
           <%= form.label :name, style: "display: block" %>
           <%= form.text_field :name, class: "form-control" %>
+          <%= errors_for(form, :name) %>
         </div>
       </div>
 
@@ -24,12 +25,13 @@
         <div class="col">
           <%= form.label :phone, style: "display: block" %>
           <%= form.text_field :phone, class: "form-control", data: { masks_target: 'phone' } %>
+          <%= errors_for(form, :phone) %>
         </div>
 
         <div class="col">
           <%= form.label :cpf, style: "display: block" %>
           <%= form.text_field :cpf, class: "form-control", data: { masks_target: 'cpf' } %>
-
+          <%= errors_for(form, :cpf) %>
         </div>
       </div>
 
@@ -37,7 +39,7 @@
         <div class="col">
           <%= form.label :email, style: "display: block" %>
           <%= form.text_field :email, class: "form-control" %>
-
+          <%= errors_for(form, :email) %>
         </div>
       </div>
 
