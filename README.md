@@ -34,7 +34,7 @@ $ bundle exec rake assets:precompile
 
 * inicie o servidor
 ```
-ruby bin/rails server
+$ ruby bin/rails server
 ```
 * abra http://localhost:3000/ no browser
 
